@@ -1,0 +1,47 @@
+{% extends "produit/accueil.html" %}
+{% block title %} Reparation {% endblock %}
+
+{% block page %}
+{% load static %}
+<style type="text/css">
+	body
+	{
+		background: url('{% static "image/light-phone-business-card.jpg" %}');
+	}
+	
+
+	#page 
+	{
+		width: 100%;
+		padding: 70px;
+		
+		
+		text-align: center;
+	}
+	#page img
+	{
+		width: 40%;
+
+	}
+	#page h3 , #page h2 ,#page h4
+	{
+		color:black;
+	}
+	.text-rep 
+	{
+	float: right;
+	}
+
+</style>
+<div id="page">
+	<img src="{% static "image/tablet-pc-cell-phone.png" %}">
+	<span class="text-rep">
+	<h2>Bienvenue dans l'assistance de Cbshop </h2> <h3> Contactez nous ou rendez vous dans une de nos boutiques  </h3>
+	<h4>Vous serez accueilli et votre probléme ne sera plus que souvenir </h4>
+	Vous pouvez nous joindre sur : 
+	<h3> dousssy25@gmail.com </h3>
+	<h3>+221 78 455 99 18 </h3>
+	<h3>+221 77 523 03 33 </h3>
+	</span>
+</div>
+{% endblock %}

@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Image du produits </title>
+</head>
+<body>
+{% load static %}
+
+
+
+<link rel="stylesheet" type="text/css" href="{% static "style/style_image.css" %}">
+
+
+
+
+<a class="rouge" href="{% url "detail-prod" produit.id %}">Retour</a>
+
+
+
+
+<span class="pti-element">
+<a class="element-tof"  href="#img1"><img src="{{ produit.photo_img1.url }}"/></a>
+<a class="element-tof"  href="#img2"><img src="{{ produit.photo_img2.url }}"/></a>
+{% if produit.photo_img3.url != none %}
+<a class="element-tof"   href="#img3"><img src="{{ produit.photo_img3.url }}"/></a>
+{% endif %}
+{% if produit.photo_img4.url != none %}
+<a class="element-tof"    href="#img4"><img src="{{ produit.photo_img4.url }}"/></a>
+{% endif %}
+{% if produit.photo_img5.url != none %}
+<a class="element-tof"   href="#img5"><img src="{{ produit.photo_img5.url }}"/></a>
+{% endif %}
+
+</span>
+<div class="detail-produit">
+<div class="col-lg-10 col-sm-10 col-xs-12" id="image-prod">
+<span class="active"  id="img1"><img src="{{ produit.photo_img1.url }}"/></span>
+<span class="tof"   id="img2"><img src="{{ produit.photo_img2.url }}"/></span>
+{% if produit.photo_img3.url != none %}
+<span class="tof"   id="img3"><img src="{{ produit.photo_img3.url }}"/></span>
+{% endif %}
+{% if produit.photo_img4.url != none %}
+<span class="tof"   id="img4"><img src="{{ produit.photo_img4.url }}"/></span>
+{% endif %}
+{% if produit.photo_img5.url != none %}
+<span class="tof"    id="img5"><img src="{{ produit.photo_img5.url }}"/></span>
+{% endif %}
+</div>
+
+
+
+
+<script type="text/javascript" src="{% static "scriptjava.js" %}"></script>
+</body>
+</html>

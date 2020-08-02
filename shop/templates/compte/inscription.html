@@ -1,0 +1,48 @@
+{% extends "produit/accueil.html" %}
+
+{% block title %} inscription cbshop {% endblock %}
+
+{% block page %}
+{% load static %}
+ <link href="{% static "style/style_ajout.css" %}" rel="stylesheet"/>
+ <link href="{% static "node_modules/bootstrap/dist/css/bootstrap.min.css" %}" rel="stylesheet"/>
+
+
+{% if inscri %}
+
+<div id="reussit">
+
+Inscription réussit    <a href="{% url "pays" %}" ><button> Ajouter une adresse </button></a>
+
+<a href="{% url "accueil" %}"> <button>ignorer </button></a>
+</div>
+
+</style>
+
+</div>
+{% else %}
+<style type="text/css">
+
+</style>
+<h1>Inscrivez vous !</h1>
+
+<div class="col-lg-4 col-sm-4 col-xs-12" id="conex">
+<form action="." method="post">
+	<h3>Inscription</h3>
+
+	{% if error %}
+	<span id="rouge"> Identifiant ou mot de passe Incorrect. Vérifier que vous avez entré des données correctes  puis réessayez </span>
+	{% endif %}
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Se connecter" />
+    <a href="{% url "inscription" %}"></a><br>
+    <a href="{% url "connexion" %}">vous êtes déjà inscrit . </a>
+</form>
+
+</div>
+<div id="image-ins" class="col-lg-6 col-sm-5">
+	<img src="{% static "image/smartphone.jpg" %}">
+</div>
+{% endif %}
+{% endblock %}

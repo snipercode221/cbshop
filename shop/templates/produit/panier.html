@@ -1,0 +1,77 @@
+{% extends "produit/accueil.html" %}
+{% block title %} mon panier {% endblock %}
+
+{% block page %}
+{% load static %}
+     <link href="{% static "style/style_panier.css" %}" rel="stylesheet"/>
+     <style type="text/css">
+     	td img
+{
+	
+	height: 10%;
+}
+
+     </style>
+
+
+
+{% if client %}
+{{client}}
+{% endif %}
+{% if total > 0 %}
+<h3>Votre Panier </h3>
+<div class="col-lg-8 col-sm-8 col-xs-12" id="panier">
+	<table>
+	<thead>
+		<tr>
+			<td>Produits </td>
+			<td> Prix</td>
+			<td>Quantité </td>
+			
+		
+			
+		</tr>
+
+	</thead>
+	<tbody>
+{% for panier in cart %}
+<tr>
+<td><img src="{{ panier.produit.photo_img1.url }}"/>
+{{panier.produit.nom}}<br>
+<a href="{% url "supprime_produit" panier.produit.id panier.quantite %}"><button> Supprimer </button></a>
+<a href="{% url "modifie_produit" panier.produit.id panier.quantite %}"><button> modifier </button></a>
+
+
+
+</td>
+
+<td><span class="prix">
+{{panier.produit.prix}} Francs CFA </span>
+</td>
+<td>
+{{panier.quantite}}
+</td>
+<td></td>
+<br>
+{% endfor %}
+<tr>
+<td>Total : </td>
+<td>{{total}} Francs CFA</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+<div class="col-lg-2 col-sm-2 col-xs-12" id="confirmer-achat">
+Votre commande s'éléve à {{total}} Francs CFA
+<a href="{% url "supprime_panier" %}"><button> Vider le panier </button></a>
+<a href="{% url "confirmer-achat" %}"><button>Passez la commande </button></a>
+</div>
+
+{% else %}
+<h3>Votre Panier est vide </h3>
+<h4> Selectionnez des produits et revenez confirmer votre achat</h4>
+{% endif %}
+
+{% endblock %}

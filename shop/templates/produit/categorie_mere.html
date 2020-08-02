@@ -1,0 +1,75 @@
+{% extends "produit/accueil.html" %}
+{% block title %} produit {{categoriem.nom}} {% endblock %}
+
+{% block page %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static "style/style_prod.css" %}">
+
+<style type="text/css">
+
+
+</style>
+
+
+<span class="titrepage"><H2> {{categoriem.nom}}  </H2>
+	<h3>Avoir du bon sens c'est savoir faire le bon choix </h3>
+</span>
+
+<div class="col-lg-2 col-sm-5 col-xs-10" id="filtre">
+	<h3>Filtrer par</h3>
+	<h4>Catégories</h4>
+	{% for categorie in categories %}
+
+	<a href="{% url "categorie" categorie.id %}">{{categorie.nom}} </a> <br>
+	{% endfor %}
+
+	<h4>Marques</h4>
+
+	{% for marque in marques %}
+
+	<a href="{% url "marque" marque.id %}">{{marque.nom}}  </a>  <br>
+	{% endfor %}
+
+</div>
+<div id="produit-vente" class="col-lg-9 col-sm-12 col-xs-12">
+{% for produit in minis %}
+
+
+<div class="col-lg-3 col-sm-3  col-xs-6" id="prod">
+<div class="produit">
+<img src="{{ produit.photo_img1.url }}" alt="{{produit.nom}}"/>
+<span class="nom">{{produit.nom}}</span><br>
+<span class="text">Produit {{produit.marque}} disponible à {% if produit.prix_normal != 0 %} <s style="color: red"> {{produit.prix_normal}}</s>{% endif %}<br> {{produit.prix}} Francs CFA
+</span><br><br>
+<a href="{% url "detail-prod" produit.id  %}"> <button>Voir</button></a>
+</div>
+</div>
+{% endfor %}
+
+</div>
+
+
+
+
+
+<div class="pagination">
+   {% if minis.has_previous %}
+       <a href="{% url 'tou-prod' minis.previous_page_number %}"><<<Précédente</a> -
+   {% endif %}
+   <span class="current">
+       Page {{ minis.number }} sur {{ minis.paginator.num_pages }}
+   </span>
+   {% if minis.has_next %}
+       - <a href="{% url 'tou-prod' minis.next_page_number %}">Suivante>>></a>
+
+
+
+    {% endif %}
+</div>
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "produit/accueil.html" %}
+{% block title %} Inscription vendeur {% endblock %}
+
+{% block page %}
+{% load static %}
+<link href="{% static "style/style_ajout.css" %}" rel="stylesheet"/>
+
+{% if inscri %}
+
+<div id="reussit">
+
+Inscription vendeur réussit  <a href="{% url "ajouter_boutique"%}"><button>Créer votre boutique </button></a>
+</div>
+
+
+</div>
+{% else %}
+
+
+<h2>Vendez toute sorte de produits avec cbshop </h2>
+<h5> Une assistance est la pour vous guidez afin que vous puissiez vendre plus simplement en ligne avec 1000% de sécurité </h5>
+
+<div class="col-lg-5 col-sm-6 col-xs-12" id="conex">
+	<h2> Avoir un compte vendeur </h2>
+<form action= "." method="post">
+	<h3>Inscription vendeur  </h3>
+	{% if probleme %} <pan class="rouge" > Ce nom d'utilisateur existe déja </pan> {% endif %}
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="S'inscrire " />
+</form>
+
+</div>
+<div id="image-ins" class="col-lg-6 col-sm-4">
+
+	<img src="{% static "image/Web-Design.png" %}">
+</div>
+
+{% endif %}
+{% endblock %}

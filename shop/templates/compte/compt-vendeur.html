@@ -1,0 +1,98 @@
+
+{% extends "produit/accueil.html" %}
+{% block title %} compte vendeur {{produit.nom}}{% endblock %}
+
+{% block page %}
+{% load static %}
+ <link href="{% static "style/style_compte.css" %}" rel="stylesheet"/>
+
+<h4> Vendeurs de Cbshop  </h4>
+<span class="rouge" >{% for message in messages %} {{message.message}} {% endfor %}</span>
+<div id="contenue_page">
+
+{% block menue %}
+
+<style type="text/css">
+
+</style>
+
+
+<div id="menu" class="col-lg-2 col-sm-4 col-xs-10">
+	<span class= "col-lg-12 col-xs-12" id="title">Menu</span>
+
+	<a href="{% url "produit" 1 %}"> <button>+ Produits </button></a>
+	<a href="{% url "produit" 2 %}"> + Categories</a>
+	<a href="{% url "produit" 3 %}"> + Marques </a>
+
+	<a href="{% url "compte_vendeur" %}"> + Commandes reçus </a>
+	<a href="{% url "reparation"%}"> + Aide </a>
+	<a href="{% url "produit" 4 %}"> + Promotion</a>
+	<a href="{% url "deconnexion" %}"> + Déconnexion  </a>
+</div>
+<span class="Mapage"><a href="{% url "boutique" boutique.id %}"> <button>Voir ma Page du site  </button></a></span>
+<h3>{{boutique.nom}}</h3>
+Pour une meilleur vente assurez vous de la qualité des images de vos produits
+{% endblock %}
+
+{%block commande %}
+
+
+<div id="commande" class="col-lg-6 col-sm-10 col-xs-12">
+<h4>Commandes... <span class="rouge">({{i}}) .{% if i != 0 %}Des clients vous attendent. {% endif %}</span></h4>
+<div class="col-lg-12 col-sm-12 col-xs-12" id="panier">
+	<table>
+	<thead>
+		<tr>
+			<td>Produits </td>
+			<td> Prix</td>
+			<td>Quantité </td>
+			
+		
+			
+		</tr>
+
+	</thead>
+	<tbody>
+{% for commande in commandes_n %}
+<tr>
+<td><img src="{{ commande.panier.produit.photo_img1.url }}"/>
+{{commande.panier.produit.nom}} <br>Par :{{commande.panier.client.nom}} depuis {{commande.lieu_de_livraison }} <br>Le : {{commande.date}}<br>
+<a href="{% url "detail_commande" commande.id %}"><button> Voir les details</button></a>
+</td>
+
+<td><span class="prix">
+{{commande.panier.produit.prix}} Francs CFA </span>
+</td>
+<td>
+{{commande.panier.quantite}}
+</td>
+</tr>
+
+
+
+
+{% endfor %}
+
+</tbody>
+</table>
+</div>
+
+<h4>Mes ventes récentes </h4>
+
+<div class="col-lg-12 col-sm-12 col-xs-12" id="panier">
+
+{% for commande in commandes_l %}
+
+
+<span class="deja_vue">
+<a href="{% url "detail_commande" commande.id %}"> {{commande.panier.produit.nom}} </a>
+
+</span>
+
+{% endfor %}
+</div>
+</div>
+</div>
+
+{% endblock %}
+{% endblock %}

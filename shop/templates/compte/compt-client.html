@@ -1,0 +1,123 @@
+{% extends "produit/accueil.html" %}
+{% block title %} compte client {{produit.nom}}{% endblock %}
+
+{% block page %}
+{% load static %}
+ <link href="{% static "style/style_compte.css" %}" rel="stylesheet"/>
+<span class="titre">
+
+</span>
+<div id="contenue_page">
+
+{% block menue %}
+
+
+<div id="menu" class="col-lg-2 col-sm-4 col-xs-10">
+	<span class= "col-lg-12 col-xs-12" id="title">Menu</span>
+
+	<a href="{% url "my_cart"  %}"> + Panier </a>
+	
+
+	<a href="{% url "compte_client" %}"> + Mes commande </a>
+	<a href="{% url "reparation"%}"> + Aide </a>
+	<a href="{% url "deconnexion" %}"> + Déconnexion  </a>
+</div>
+
+{% endblock %}
+
+<h2>Bienvenue dans votre compte </h2>
+
+{%block commande %}
+
+
+<div id="commande" class="col-lg-8 col-sm-10 col-xs-12">
+<h4>Commandes en cour... </h4>
+<div class="col-lg-12 col-sm-12 col-xs-12" id="panier">
+	<table>
+	<thead>
+		<tr>
+			<td>Produits </td>
+			<td> Prix</td>
+			<td>Quantité </td>
+			
+		
+			
+		</tr>
+
+	</thead>
+	<tbody>
+{% for commande in commandes_n %}
+<tr>
+<td><img src="{{ commande.panier.produit.photo_img1.url }}"/>
+{{commande.panier.produit.nom}} <br>Boutique :{{commande.boutique.nom}} <br> Adresse : {{commande.boutique.address }} <br>Le : {{commande.date}}<br>Numéro de service de la boutique : 
+{{commande.boutique.numero_service}} / {{commande.boutique.second_num_service}}
+</td>
+
+<td><span class="prix">
+{{commande.panier.produit.prix}} Francs CFA </span>
+</td>
+<td>
+{{commande.panier.quantite}}
+</td>
+</tr>
+
+
+
+
+{% endfor %}
+
+</tbody>
+</table>
+</div>
+
+<h4>Commande vue et mise en attente </h4>
+
+<div class="col-lg-12 col-sm-12 col-xs-12" id="panier">
+
+{% for commande in commandes_v %}
+
+
+<span class="deja_vue">
+ {{commande.panier.produit.nom}}
+ <br>
+
+
+</span>
+
+{% endfor %}
+</div>
+
+
+<h4>Mes derniéres achats </h4>
+
+<div class="col-lg-12 col-sm-12 col-xs-12" id="panier">
+
+{% for commande in commande_livrer %}
+
+
+<span class="deja_vue">
+ {{commande.panier.produit.nom}}<br>
+
+</span>
+
+{% endfor %}
+</div>
+</div>
+</div>
+
+<div id="boutique" class="col-lg-2 col-sm-5 col-xs-11">
+	<span class= "col-lg-12 col-xs-12" id="title">Mes abonnement </span>
+	{% for abonner in abonners %}
+	<a href="{% url "boutique" abonner.boutique.id %}"> ++{{abonner.boutique.nom}} </a>
+	
+
+	
+
+	{% endfor %}
+</div>
+
+	
+
+
+{% endblock %}
+{% endblock %}

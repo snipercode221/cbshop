@@ -1,0 +1,83 @@
+{% extends "compte/compt-vendeur.html"%}
+{% block title %} ajout Catégorie  {% endblock %}
+
+
+{% load static %}
+
+
+
+{% block commande %}
+<link href="{% static "style/style_ajout.css" %}" rel="stylesheet"/>
+{% if envoi %}
+
+
+<div id="reussit">
+Catégorie enregistrer avec succée 
+</div>
+
+
+</div>
+{% else %}
+<style type="text/css">
+	
+	ul
+	{
+		margin-left: 7%;
+		list-style:  none;
+		
+	}
+
+	p label
+	{
+		margin-right:  3%;
+		width: 40%;
+	
+	}
+		input
+	{
+		margin: 10px;
+		width: 40%;
+		
+	}
+		input
+	{
+		margin: 10px;
+	}
+		@media all and (max-width: 770px)
+
+{
+
+	p label
+	{
+		width: 100%;
+	}
+	input
+	{
+		width: 100%;
+	}
+}
+</style>
+<div class="col-lg-6 col-sm-6 col-xs-11">
+<form action="." method="post">
+<h3>Ajouter une nouvelle categorie</h3>
+<h5>Choisissez votre boutique </h5>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <a href="{% url "produit" 2 %}"><button>Annuler</button></a>
+    <input type="submit" value="Enregistrer" />
+</form>
+
+
+</div>
+
+
+
+
+
+
+
+{% endif %}
+
+</div>
+
+{% endblock %}

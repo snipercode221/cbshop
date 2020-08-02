@@ -1,0 +1,80 @@
+ {% extends "produit/accueil.html" %}
+{% block title %} produit {{marque.nom}}  {% endblock %}
+
+{% block page %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static "style/style_prod.css" %}">
+
+<style type="text/css">
+
+
+
+
+</style>
+
+
+<span class="titrepage"><H2> Page Promo cbshop </H2>
+	<h3>Avoir du bon sens c'est savoir faire le bon choix </h3>
+</span>
+<div class="col-lg-2 col-sm-5 col-xs-10" id="filtre">
+	<h3>Filtrer par</h3>
+	<h4>Catégories</h4>
+	{% for categorie in categories %}
+
+	<a href="{% url "categorie-promo" categorie.id %}">{{categorie.nom}} </a> <br>
+	{% endfor %}
+
+	
+
+</div>
+
+<div id="produit-vente" class="col-lg-9 col-sm-12 col-xs-12">
+{% for promo in minis %}
+
+
+<div class="col-lg-3 col-sm-3 col-xs-6" id="prod">
+<div class="produit">
+<div class="image">
+<img src="{{ promo.produit.photo_img1.url }}" alt="{{produit.nom}}"/>
+</div>
+<div class="desc-text">
+<span class="nom">{{promo.produit.nom}}</span><br>
+<span class="text">Produit {{promo.produit.marque}} disponible à<br> 
+	<s style="color: red">{{promo.produit.prix}} </s> {{promo.nouveau_prix}} Francs
+</span><span class="nom"><p>Termine le {{promo.date_fin.day}}/{{promo.date_fin.month}}/{{promo.date_fin.year}}</p></span>
+<a href="{% url "detail-prod" promo.produit.id  %}"> <button>Voir</button></a>
+</div>
+</div>
+</div>
+{% endfor %}
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="pagination">
+   {% if minis.has_previous %}
+       <a href="{% url 'tou-prod' minis.previous_page_number %}"><<<Précédente</a> -
+   {% endif %}
+   <span class="current">
+       Page {{ minis.number }} sur {{ minis.paginator.num_pages }}
+   </span>
+   {% if minis.has_next %}
+       - <a href="{% url 'tou-prod' minis.next_page_number %}">Suivante>>></a>
+
+
+
+    {% endif %}
+</div>
+
+
+
+
+{% endblock %}

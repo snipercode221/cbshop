@@ -1,0 +1,185 @@
+{% extends "produit/accueil.html" %}
+{% block title %} detail produits {{produit.nom}}{% endblock %}
+
+{% block page %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static "style/style_prod.css" %}">
+<link rel="stylesheet" type="text/css" href="{% static "style/style_detail.css" %}">
+
+<div class="contenue-page-detail">
+<style type="text/css">
+
+    .image-gros img{
+    width: 95%;
+    margin: 5%;
+    bottom: 2%;
+    height: 88%;
+    text-decoration: none;
+    display: block;
+/* La transition s'applique à la fois sur la largeur et la hauteur, avec une durée d'une seconde. */
+    -webkit-transition: all 1s ease; /* Safari et Chrome */
+    -moz-transition: all 1s ease; /* Firefox */
+    -ms-transition: all 1s ease; /* Internet Explorer 9 */
+    -o-transition: all 1s ease; /* Opera */
+    transition: all 1s ease;
+
+  }
+  .image-gros img:hover
+  {
+    float: left;
+    display: block;
+    position: relative;
+    bottom: 0%;
+    /* L'image est grossie de 25% */
+    -webkit-transform:scale(1.50); /* Safari et Chrome */
+    -moz-transform:scale(1.50); /* Firefox */
+    -ms-transform:scale(1.50); /* Internet Explorer 9 */
+    -o-transform:scale(1.50); /* Opera */
+    transform:scale(1.50);
+
+
+  }
+	
+
+
+</style>
+<div id="payer">
+<img src="{% static "image/payement.jpeg"%}">
+<span class="text-prod">Payez cache à la livraison </span>
+Simple , rapide et fiable !
+</div>
+<span class="pti-element">
+<a class="element-tof"  href="#img1"><img src="{{ produit.photo_img1.url }}"/></a>
+<a class="element-tof"  href="#img2"><img src="{{ produit.photo_img2.url }}"/></a>
+{% if produit.photo_img3.url != none %}
+<a class="element-tof"   href="#img3"><img src="{{ produit.photo_img3.url }}"/></a>
+{% endif %}
+{% if produit.photo_img4.url != none %}
+<a class="element-tof"    href="#img4"><img src="{{ produit.photo_img4.url }}"/></a>
+{% endif %}
+{% if produit.photo_img5.url != none %}
+<a class="element-tof"   href="#img5"><img src="{{ produit.photo_img5.url }}"/></a>
+{% endif %}
+
+</span>
+<div class="detail-produit">
+<div class="col-lg-4 col-sm-9 col-xs-10" id="image-prod">
+<span class="active"  id="img1"><img src="{{ produit.photo_img1.url }}"/></span>
+<span class="tof"   id="img2"><img src="{{ produit.photo_img2.url }}"/></span>
+{% if produit.photo_img3.url != none %}
+<span class="tof"   id="img3"><img src="{{ produit.photo_img3.url }}"/></span>
+{% endif %}
+{% if produit.photo_img4.url != none %}
+<span class="tof"   id="img4"><img src="{{ produit.photo_img4.url }}"/></span>
+{% endif %}
+{% if produit.photo_img5.url != none %}
+<span class="tof"    id="img5"><img src="{{ produit.photo_img5.url }}"/></span>
+{% endif %}
+
+<h5>Cliquez sur l'image pour agrandir</h5>
+</div>
+
+<div class="col-lg-4 col-sm-7 col-xs-12" id="text-prod">
+    <ul class="list-group">
+
+      <li class="list-group-item">Nom: <span class="text-prod">{{produit.nom}}</span></li>
+      <li class="list-group-item">Prix: <span class="text-prod">{{produit.prix}} Francs CFA </span></li>
+      <li class="list-group-item">Categorie: <span class="text-prod">{{produit.categorie}}</span></li>
+      <li class="list-group-item">Marque: <span class="text-prod">{{produit.marque}}</span></li>
+  	  <li class="list-group-item">Boutique: <span class="text-prod">{{produit.boutique}}</span> <a href="{% url "boutique" produit.boutique.id %}"><button>Voir la boutique </button></a></li>
+  	 
+    </ul>
+
+
+</div>
+<div class=" col-lg-2 col-sm-4 col-xs-12" id="commande">
+	<span class="test-achat"> Commandez {{produit.nom}} <br> Payer Cache à la Livraison</span>
+	<form action="." method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+   
+
+  	<input type="submit" value="Mettre dans le panier" /></a>
+  </form>
+  {% if mis_panier %}
+  Ajouter avec succées 
+  <a href="{% url "detail-prod" produit.id  %}"> <button>Finaliser l'achat</button></a>
+  {% endif %}
+   
+
+   
+</div>
+
+
+<div class="col-lg-6 col-sm-8 col-xs-12" id="description">
+Description: <br><span class="text-desc">{{produit.description}}</span><br>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="produit-vente" class="col-lg-9 col-sm-12 col-xs-12">
+	<span class="autre">Voir aussi d'autre {{produit.categorie}} </span>
+	<br><br>
+{% for produit in produits %}
+
+
+<div class="col-lg-3 col-sm-3 col-xs-6" id="prod">
+<div class="produit">
+<img src="{{ produit.photo_img1.url }}" alt="{{produit.nom}}"/>
+<span class="nom">{{produit.nom}}</span><br>
+<span class="text">Produit {{produit.marque}} disponible à {% if produit.prix_normal != 0 %}<s style="color: red">{{produit.prix_normal}}</s>{% endif %}<br>{{produit.prix}} 
+</span><br><br>
+<a href="{% url "detail-prod" produit.id  %}"> <button>Voir</button></a>
+</div>
+</div>
+{% endfor %}
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="{% static "js/changeimg.js" %}"></script>
+
+<script type="text/javascript">
+  var image_gros = document.getElementById("image-prod") ; 
+  image_gros.addEventListener('click' , function(){
+    this.classList.toggle('image-gros');
+
+  });
+  
+</script>
+
+</div>
+</div>
+{%endblock%}

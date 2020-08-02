@@ -1,0 +1,79 @@
+{% extends "produit/accueil.html" %}
+{% block title %} Vendre mes produits{{produit.nom}}{% endblock %}
+
+{% block page %}
+{% load static %}
+<div class="col-lg-6">
+	<img src="{% static "image/Responsive-design.png" %}">
+</div>
+<div id="vente" class="col-lg-5 col-xs-12">
+	<span class="bouton-vente">
+		<h1> Vendre vos Produits en ligne avec Cbshop </h1>
+	<a href="{% url "inscription-vendeur" %}"><button>Creer un compte </button></a>
+	
+		
+	</span>
+	<span class="text-vente">
+
+		Vendre vos produits devient trés simple avec <em>CBSHOP</em>.<br>
+		Pour vendre vos produits en ligne vous devez avoir un compte vendeur ,<br>
+		vous aurrez donc la possibilité d'exposer vos produits en ligne , <br> 
+		 de creer des catégories et des marques surtout avoir vos propres clients <br> 
+		ainsi que votre propre boutique afin de vous différiencier des autres vendeurs. 
+
+	</span>
+</div>
+<style type="text/css">
+	.col-lg-6  img
+	{
+		width: 100%;
+	}
+	#vente
+	{
+		text-align: center;
+	}
+	a
+	{
+		text-decoration: none;
+	}
+	
+	.bouton-vente h1
+	{	
+		margin-top:15%;
+		color: #232f3e;
+		text-align: center;
+
+	}
+	.bouton-vente button
+	{
+		display: block;
+		margin-top:7%;
+		width: 30%;
+		height:10%;
+	}
+	.bouton-vente
+	{
+		width: 100%;
+		text-align: center;
+	}
+
+	.text-vente
+	{
+		
+		font-size: 1.2em;
+		color: #232f3e;
+		text-align: center;
+	}
+		@media all and (max-width: 770px)
+
+{
+	.col-lg-6  img
+	{
+		width:  100%;
+	}
+
+
+}
+</style>
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "produit/accueil.html"%}
+{% block title %} Ajout produit  {% endblock %}
+
+
+{% load static %}
+
+
+
+{% block page %}
+<link href="{% static "style/style_ajout.css" %}" rel="stylesheet"/>
+{% if envoi %}
+
+
+<div id="reussit">
+
+Produit enregistrer avec succée 
+</div>
+
+<a href="{% url "produit" 1 %}"><button> Voir les produits </button></a>
+{% else %}
+<div class="cat">
+<h4>S'il vous plait assurez vous que les catégories et les marques correspondent </h4>
+Si vous ne voyez pas des catégories ou marques qui correspondent à celle voulu vous pouvez : <br>
+<a href="{% url "ajouter_marque" %}"> <button>Ajouter marque + </button></a>
+<a href="{% url "ajouter_categorie" %}"> <button>Ajouter catégorie + </button></a>
+</div>>
+<div class="col-lg-6 col-sm-7 col-xs-11">
+
+<h3>Ajouter un nouveau produit </h3>
+<h5>Choisissez votre boutique </h5>
+Seul photo img1 et photo img2 sont obligatoires pour les images 
+
+
+
+
+<form method="post" enctype="multipart/form-data" action="" novalidate >
+    {% csrf_token %}
+    {{ form.as_p }}
+    <a href="{% url "produit" 1 %}"><button>Annuler</button></a>
+    <input type="submit" value="Enregistrer" />
+</form>
+</div>
+<div id="image-ins" class="col-lg-5 col-sm-5">
+
+	<img src="{% static "image/Responsive-design.png" %}">
+</div>
+
+{% endif %}
+
+{% endblock %}

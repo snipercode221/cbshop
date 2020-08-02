@@ -1,0 +1,57 @@
+
+
+
+
+
+{% extends "produit/accueil.html" %}
+{% block title %} confirmation achat de {{produit.nom}}{% endblock %}
+
+{% block page %}
+
+
+{% load static %}
+
+{% if envoi %}
+
+<div id="reussit">
+
+Commande enregistrer avec succée 
+
+<a href="{% url "compte_client" %}"> <button>Voir les details</button> </a>
+</div>
+<style type="text/css">
+	#reussit
+	{
+		padding: 2%;
+		background-color:#337ab7;
+		width: 100%;
+		color: white;
+	}
+	
+</style>
+
+</div>
+{% else %}
+<div id="elemet">
+
+<h1>Confirmer votre Achat </h1>
+<h4>Vous allez commander les produits se trouvant dans votre panier </h4>
+<form action="." method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value=" Ajouter " />
+   
+</form>
+
+<style type="text/css">
+	#elemet
+	{
+		text-align: center;
+		width: 100%;
+	}
+
+</style>
+</div>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,98 @@
+
+{% extends "compte/compt-vendeur.html"%}
+{% block title %} supprimer : confirmer   {% endblock %}
+
+
+{% load static %}
+
+
+
+{% block commande %}
+{% if element == "0" %}
+
+<div id="reussit">
+
+Supprimer avec succes
+</div>
+
+<a href="{% url "compte_vendeur" %}"><button> Retour </button></a>
+<style type="text/css">
+	#reussit
+	{
+		padding: 2%;
+		background-color:#337ab7;
+		width: 100%;
+		color: white;
+		top: 0;
+	
+	}
+	#reussit button
+	{
+		float: right;
+	}
+	
+</style>
+
+</div>
+{% endif %}
+<style type="text/css">
+	.rouge
+	{
+		color: red;
+	}
+	.brouge
+	{
+		background-color:red;
+		color : white; 
+		padding: 7px;
+		margin: 7px;
+		border-radius: 10px;
+	}
+</style>
+
+{% if element == "1" %}
+
+<h2>Êtes-vous sûr ?</h2>
+<h3>Voulez-vous vraiment supprimer {{produit.nom}}? </h3>
+
+
+<a href="{% url "supprimer_element" 1  produit.id %}" ><button  class="brouge">Oui je suis sûr</button></a>  <a href="{% url "produit" 1 %}"><button>Non annuler la suppression </button></a>
+
+{% endif %}
+
+{% if element == "2" %}
+<h2>Êtes-vous sûr ?</h2>
+<h3>Voulez-vous vraiment supprimer ? {{categorie.nom}}</h3>
+
+
+
+Les éléments suivants sont liés à celui-ci et seront aussi supprimés :
+{% for produit in produit_depend %}
+<h5 class="rouge">* {{produit.nom}}</h5>
+
+{% endfor %}
+
+
+<a href="{% url "supprimer_element" 2  categorie.id %}" ><button  class="brouge">Oui je suis sûr</button></a>  <a href="{% url "produit" 2 %}"><button>Non annuler la suppression </button></a>
+
+{% endif %}
+
+
+{% if element == "3"%}
+<h2>Êtes-vous sûr ?</h2>
+<h3>Voulez-vous vraiment supprimer ? {{marque.nom}}</h3>
+
+
+
+Les éléments suivants sont liés à celui-ci et seront aussi supprimés :
+{% for produit in produit_depend %}
+<h5 class="rouge"> * {{produit.nom}}</h5>
+
+{% endfor %}
+
+
+<a href="{% url "supprimer_element" 3  marque.id %}" ><button  class="brouge">Oui je suis sûr</button></a>  <a href="{% url "produit" 3 %}"><button>Non annuler la suppression </button></a>
+
+{% endif %}
+</div>
+{% endblock %}

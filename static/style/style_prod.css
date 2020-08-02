@@ -1,0 +1,233 @@
+
+#mon-panier 
+	{
+		font-size: 1.3em;
+		color: white;
+		border: 1.3px solid white;
+		margin: 1%;
+		padding: 2px;
+}
+	h2
+	{
+		font-size: 2.1em;
+	}
+	#description{
+		margin:  3%;
+
+	}
+	#description .text-desc
+	{
+		color: #180003;
+	}
+	form p input 
+	{
+		color: black;
+		margin-bottom: 15px;
+	}
+	#commande .test-achat
+	{
+		font-size: 1.2em;
+		
+	}
+	#commande
+	{
+	
+		background-color: black;
+		color:white;
+		margin-top: 3%;
+		
+	}
+	.list-group li 
+	{
+		color: #183043;
+	}
+	
+.titrepage
+	{
+		text-align: center;
+	}
+
+	#filtre
+	{
+		background-color: white;
+		text-align: center;
+		margin: 10px;
+		padding: 0;
+		margin-right:30px; 
+		box-shadow: 1px 1px 1px #555;
+		float: left;
+	}
+	#filtre h3
+	{
+		width: 100%;
+		background-color: #232f3e;
+		color: white;
+		margin-left: 0;
+		margin-right: 0; 
+		margin-top: 0;
+		margin-bottom: 15px;
+		height: 30px;
+		font-size: 1.2em;
+
+	}
+	#filtre h4 
+	{
+		box-shadow: 1px 1px 1px 1px #555;
+
+	}
+	#prod
+	{
+		margin-bottom: 25px;
+
+
+	}
+	.produit
+	{
+		width: 98%;
+		margin-left:1%;
+		height: 450px;
+		
+		margin:4px;
+		margin-top: 1%;
+		margin-bottom:2%;	
+		margin-right: 0;
+		margin-top: 0;
+		background-color: white;
+		text-align: center;
+		text-decoration: none;
+		float: right;
+
+	
+
+	}
+	.produit:hover
+	{
+		
+		box-shadow: 2px 2px 2px gray;
+		
+
+		
+	}
+	.produit .image
+	{
+		height: 280px;
+		border-bottom: 1.3px solid #232f3e;
+		box-shadow-top: 2px gray;
+		width: 90%;
+	}
+	.produit .desc-text
+	{
+		height: 180px;
+		width: 90%;
+	}
+
+	.produit img 
+	{
+		max-width: 100%;
+		min-width: 20%;
+		min-height: 180px;
+		max-height:270px;
+
+		margin: 0px;
+		padding: 1%;
+		display: block;
+	}
+	.produit img:hover
+	{
+		box-shadow:0;
+	}
+
+
+
+	#produit-vente
+	{
+	 margin: 0;
+	 padding: 0;
+	 float: right;
+	}
+	.col-lg-4 , .col-sm-4 , .col-xs-6
+	{
+		padding-left: 5px;
+		padding-right: 5px; 
+	}
+	.produit .text
+	{
+		color:  #232f3e;
+		font-size: 0.9em;
+	}
+	.produit .nom
+	{
+		font-size: 0.7em;
+	}
+
+@media all and (min-width: 500px) and (max-width: 900px)
+
+{
+	.produit 
+	{
+		width: 80%;
+		height: 470px;
+		margin-bottom: 10px;
+	}
+	.produit .nom
+	{
+		font-size: 0.7em;
+	}
+
+}
+@media all and (max-width: 510px)
+
+{
+	.produit 
+	{
+		width: 99%;
+		height: 470px;
+		margin-bottom: 10px;
+	}
+	
+
+	#prod
+	{
+		margin-bottom: 10px;
+
+	}
+	.produit .text
+	{
+		font-size: 0.7em;
+	}
+	.produit .nom
+	{
+		font-size: 0.8em;
+		
+	}
+	.produit a
+	{
+	
+		margin:10px;
+		height:auto;
+		padding: 3px;
+
+
+
+	}
+	a
+	{
+		text-decoration: none;
+	}
+	.produit img 
+	{
+		max-width: 100%;
+		min-width:30%;
+		min-height:155px;
+		margin: 0px;
+	}
+	.produit .nom
+	{
+		font-size: 0.5em;
+	}
+	h2
+	{
+		font-size: 1.5em;
+	}
+
+}

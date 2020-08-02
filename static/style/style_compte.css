@@ -1,0 +1,232 @@
+	.titre h3
+	{
+		width: 100%;
+		display: block;
+		text-align: center;
+	}
+	#contenue_page
+
+	{
+		margin: 4%;
+	}
+	
+	form p 
+	{
+		padding:3px; 
+	}
+	form
+	{
+		text-align: center;
+	}
+	#menu
+	{
+		float: left;
+		box-shadow: 1px 1px 3px #555;
+		border-radius: 4px;
+		border: 1px solid gray;
+		margin-right: 5%;
+		text-align: center;
+		display:block; 
+
+
+
+	}
+	#boutique
+	{
+		float: right;
+		box-shadow: 1px 1px 3px #555;
+		border-radius: 50px;
+		border: 1px solid green;
+		margin-right: 5%;
+		text-align: center;
+		display:block; 
+
+	}
+	#boutique a
+	{
+		text-decoration: none;
+		display: block;
+		font-size: 1.1em;
+		margin-top: 3%;
+	}
+	
+
+	#menu a 
+	{
+		text-decoration: none;
+		display: block;
+		font-size: 1.1em;
+		margin-top: 3%;
+	}
+	.Mapage
+	{
+		float: right;
+		margin-top: 0%;
+		margin-bottom: 3%;
+
+	}
+	#title
+	{
+		background-color: #232f3e;
+		color: white;
+		padding: 1%;
+		text-align: center;
+		font-size: 1.2em;
+	
+	}
+
+
+@media all and (max-width: 710px)
+
+{
+
+	td img
+	{
+	width: 38%;
+	height: 100px;
+	}
+
+	#contenue_page
+	{
+		margin: 0%;
+
+	}
+	#title
+	{
+		background-color: #232f3e;
+		color: white;
+		padding: 1%;
+		text-align: center;
+		font-size: 1.2em;
+	
+	}
+	#menu a 
+	{
+		text-decoration: none;
+		display: block;
+		font-size: 1em;
+		margin-top: 1%;
+
+	}
+
+	.Mapage
+	{
+		float: right;
+		margin-top: 3%;
+		margin-bottom: 3%;
+
+	}
+}
+
+
+td
+{
+	font-size: 1.2em;
+}
+.prix
+{
+	color: #CC66FF;
+}
+#panier-prod
+{
+	margin-bottom: 0%;
+	height: 200px;
+
+}
+td img
+{
+	width: 20%;
+	
+}
+#panier
+{
+	top: 0;
+	float: left;
+	margin-left: 8%;
+	margin-bottom: 3%;
+}
+#confirmer-achat
+{
+	float:right;
+	margin-top:15%; 
+	padding: 0;
+	background-color: #232f3e;
+	height: 180px;
+	color: white;
+	text-align: center;
+}
+#confirmer-achat a button
+{
+	margin-top: 4%;
+}
+table
+{
+	margin: 0;
+	top: 5%;
+}
+td
+{
+	padding:1%;
+	margin-left:  12%;
+	margin-right:  7%;
+}
+tr
+{
+	border-bottom:  2.1px solid gray;
+}
+h3
+{
+	font-size: 1.5em;
+	color: #232f3e;
+	margin: 0;
+}
+@media all and (max-width: 890px){
+#panier
+{
+	margin: 0;
+
+}
+td
+{
+	font-size: 0.9em;
+}
+h3
+{
+	font-size: 1.8em;
+	color: #232f3e;
+}
+
+
+#panier-prod
+{
+	margin: 0%;
+	height: 450px;
+
+}
+
+
+}
+.rouge
+{
+	color: red;
+}
+#commande
+{
+	float: right;
+	margin: 5%;
+}
+.deja_vue
+{
+	font-size: 1.3em;
+}
+.deja_vue a 
+{
+	text-decoration: none;
+	
+	text-decoration: underline;
+	display: block;
+}
+h4 
+{
+	margin: 3%;
+}

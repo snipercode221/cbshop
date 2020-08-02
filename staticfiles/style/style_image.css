@@ -1,0 +1,142 @@
+	.rouge button 
+	{
+		font-size: 1.5em;
+		border-radius: 10px; 
+		display: block;
+
+
+	}
+.contenue-page-detail
+	{
+		margin: 3%;
+	}
+	.detail-produit
+	{
+		text-align: center;
+	}
+	#image-prod img
+	{
+		
+		
+	}
+
+	#image-prod
+	{
+		margin-left: 10px;
+	
+		bottom: 5%;
+		height: 720px;
+
+	}
+
+@media all and (min-width: 450px) and (max-width: 800px)
+{
+
+}
+
+
+@media all and (max-width: 450px)
+
+{
+	.contenue-page-detail
+	{
+		margin: 0%;
+	}
+	.detail-produit
+	{
+		text-align: center;
+	}
+	
+	#image-prod
+	{
+		width: 100%;
+		margin-left: 0px;
+		float: right;
+		margin-top: 4%;
+	}
+	#image-prod img
+	{
+		width: 100%;
+	}
+	.text-prod
+	{
+		font-size: 1em;
+		margin-top: 5px;
+		color: black;
+	}
+	#text-prod
+	{
+		margin: 1%;
+		background-color: white;
+		padding: 5px;
+	}
+	.text-desc
+	{
+		font-size: 0.9em;
+	}
+	.element-tof
+	{
+		width: 50px;
+		height: 50px;
+		
+
+	}
+
+	.element-tof img
+	{
+		width: 50px;
+		height: 50px;
+		margin: 0;
+		
+
+	}
+	.pti-element
+	{
+		display: inline;
+		float: left;
+		width: 100%;
+		margin: 0;
+		margin-top: 1%;
+	}
+
+
+}
+
+
+
+	.element-tof
+	{
+		width: 50px;
+		height: 50px;
+		float:left;
+		margin: 7px;
+		box-shadow: 1px 1px 1px 1px #555;
+
+	}
+
+
+	.element-tof img
+	{
+		width: 50px;
+		height: 50px;
+	}
+
+	.tof 
+	{
+		display: none;
+	}
+	.active
+	{
+		display: block;
+	}
+
+	.pti-element
+	{
+		display: inline;
+		float: left;
+		width: 100%;
+		margin: 0;
+		margin-top: 3%;
+	}
+
+

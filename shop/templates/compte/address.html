@@ -1,0 +1,66 @@
+
+{% extends "produit/accueil.html"%}
+{% block title %} Creation boutique  {% endblock %}
+
+
+{% load static %}
+
+
+
+{% block page %}
+<link href="{% static "style/style_ajout.css" %}" rel="stylesheet"/>
+{% if envoi_client %}
+<div id="reussit">
+
+Adresse enregister avec succés   <a href="{% url "compte_client"  %}"><button>
+	Terminer l'opération
+</button></a>
+
+</div>
+
+
+</style>
+
+</div>
+
+
+{% elif envoi_vendeur %}
+
+<div id="reussit">
+
+Boutique créer avec succée   <a href="{% url "compte_vendeur"  %}"><button> Allez dans mon compte vendeur   </button></a>
+</div>
+
+
+</style>
+
+</div>
+{% else %}
+
+
+
+<div class="col-lg-6 col-sm-7 col-xs-11">
+
+
+<h3> Précisez votre emplacement </h3>
+
+<form method="post" enctype="multipart/form-data" action=".">
+	<h3>Infos sur l'adresse </h3>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Enregistrer" />
+</form>
+</div>
+
+
+<div id="image-ins" class="col-lg-4 col-sm-4">
+
+	<img src="{% static "image/address.png" %}">
+</div>
+
+
+{% endif %}
+
+
+
+{% endblock %}

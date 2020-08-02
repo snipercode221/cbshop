@@ -1,0 +1,126 @@
+#reussit
+	{
+		padding: 2%;
+		background-color:#337ab7;
+		width: 100%;
+		color: white;
+		top: 0;
+
+	
+	}
+	#reussit button
+	{
+		float: right;
+	}
+
+	p
+	{
+		margin-left: 7%;
+		
+	}
+	p label
+	{
+		margin-right:  7%;
+		width: 40%;
+		text-align: left;
+	}
+	p input
+	{
+		margin: 10px;
+		width: 40%;
+		
+	}
+	.cat
+	{
+		text-align: center;
+	}
+	.errorlist
+	{
+		display: none;
+	}
+
+		.rouge
+	{
+		color: red;
+	}
+	
+	#image-ins img
+	{
+		width: 100%;
+		float: right;
+		margin-top: 10%;
+		
+	}
+	form h3
+	{
+		background-color:  #232f3e;
+		width :100%; 
+		margin-top: 0;
+		height: 50px;
+		color: white;
+		padding: 3px;
+		border-radius: 10%;
+		text-align: center;
+
+	}
+	
+	
+	form p 
+	{
+		padding:0px; 
+	}
+
+	#conex
+	{
+		margin-right: 80px;
+	}
+	@media all and (max-width: 770px)
+
+{
+	p
+	{
+		margin-left: 0%;
+		
+	}
+		p label
+	{
+		margin-right:  0%;
+		width: 100%;
+	}
+	p input
+	{
+		width: 90%;
+	}
+
+	#image-ins
+	{
+		display: none;
+
+	}
+	form
+	{
+		height: 270%
+	}
+	#conex
+	{
+		float: right;
+		margin:0;
+	}
+	#reussit
+	{
+		top: auto;
+	}
+	#reussit button
+	{
+		float: left;
+		margin-top: 5%;
+	}
+
+}
+
+
+
+	#commission
+	{
+		margin-top: 10%; 
+	}

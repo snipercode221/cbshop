@@ -1,0 +1,91 @@
+		.rouge
+	{
+		color: red;
+	}
+	body{
+		
+		text-align: center;
+
+	}
+	#image-ins img
+	{
+		width: 100%;
+		
+	}
+
+	form h3
+	{
+		background-color:  #232f3e;
+		width :100%; 
+		margin-top: 0;
+		height: 50px;
+		color: white;
+		padding: 3px;
+
+	}
+	
+	form p 
+	{
+		padding:3px; 
+	}
+	form
+	{
+
+		text-align: center;
+		border: 1.5px solid gray;
+		box-shadow: 1px 1px 5px #555;
+	}
+	form label
+	{
+		text-align: left;
+		display: inline-block;
+		width: 45%;
+
+	}
+	form p input
+	{
+		width: 40%;
+	}
+	#conex
+	{
+		float: right;
+		margin-right: 80px;
+	}
+	@media all and (max-width: 770px)
+
+{
+	#image-ins
+	{
+		display: none;
+
+	}
+	form
+	{
+		height: 270%
+	}
+	#conex
+	{
+		float: right;
+		margin:0;
+	}
+
+}
+	#reussit
+	{
+		padding: 2%;
+		background-color:#337ab7;
+		width: 100%;
+		color: white;
+		top: 0;
+	
+	}
+	#reussit button
+	{
+		float: right;
+	}
+	#rouge
+	{
+		color:red;
+	}
+
+	

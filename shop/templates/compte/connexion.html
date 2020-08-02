@@ -1,0 +1,29 @@
+{% extends "produit/accueil.html" %}
+{% block title %} connexion cbshop{% endblock %}
+
+{% block page %}
+{% load static %}
+ <link href="{% static "style/style_ajout.css" %}" rel="stylesheet"/>
+
+
+
+<div class="col-lg-4 col-sm-4 col-xs-12" id="conex">
+<form action="." method="post">
+	<h3>Connexion</h3>
+
+	{% if error %}
+	<span id="rouge"> Identifiant ou mot de passe Incorrect. Vérifier que vous avez entré des données correctes  puis réessayez </span>
+	{% endif %}
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Se connecter" />
+    <a href="{% url "inscription" %}"></a><br>
+    <a href="{% url "inscription" %}">Je n'est pas encore de compte Cbshop .</a>
+</form>
+
+</div>
+<div id="image-ins" class="col-lg-6 col-sm-5">
+	<img src="{% static "image/smartphone.jpg" %}">
+</div>
+
+{% endblock %}

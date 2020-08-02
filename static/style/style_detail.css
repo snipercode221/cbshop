@@ -1,0 +1,214 @@
+.contenue-page-detail
+	{
+		margin: 3%;
+	}
+	.detail-produit
+	{
+		text-align: center;
+	}
+	#image-prod
+	{
+		margin-left: 3%;
+	
+		bottom: 5%;
+		height: 600px;
+
+	}
+	#image-prod img
+	{
+		min-width:60%;
+		max-width: 94%;
+		margin: 1%;
+		bottom: 2%;
+		max-height: 88%;
+		min-height:60%;
+		text-decoration: none;
+		display: block;
+	}
+	.text-prod
+	{
+		font-size: 1.4em;
+		margin-top: 5px;
+	}
+	#text-prod
+	{
+		margin: 1%;
+		margin-left:9%;
+		background-color: white;
+		padding: 25px;
+		color: black;
+	}
+	#description
+	{
+		float: right;
+		text-align:center;
+	}
+	.text-desc
+	{
+		font-size: 1em;
+
+
+	}
+	#text-prod a
+	{
+		text-decoration: none;
+		margin-top: 5px;
+		height: 35px;
+		background-color: #EFEFEF;
+		box-shadow: 1px 1px 3px #555;
+		border-radius: 4px;
+		border: 1px solid gray;
+		font-size: 1.2em;
+		padding-left: 25px;
+		padding-right: 25px;
+
+
+	}
+	input 
+	{
+	color:black;
+	}
+
+@media all and (min-width: 450px) and (max-width: 800px)
+{
+	#image-prod
+        {
+                margin-left: 0px;
+                height: 510px;
+                float: right;
+                margin-top: 4%;
+        }
+	#image-prod img
+        {
+                min-width:70%;
+                max-width: 100%;
+                margin-top:  1%;
+                margin: 0;
+                min-height:60%;
+                max-height:80%;
+        }
+
+
+}
+
+
+@media all and (max-width: 450px)
+
+{
+	.contenue-page-detail
+	{
+		margin: 0%;
+	}
+	.detail-produit
+	{
+		text-align: center;
+	}
+	
+	#image-prod
+	{
+		margin-left: 0px;
+		height: 490px;
+		float: right;
+		margin-top: 4%;
+	}
+	#image-prod img
+	{
+		min-width:70%;
+		max-width: 100%;
+		margin-top:  1%;
+		margin: 0;
+		min-height:60%;
+		max-height:80%;
+	}
+	.text-prod
+	{
+		font-size: 1em;
+		margin-top: 5px;
+		color: black;
+	}
+	#text-prod
+	{
+		margin: 1%;
+		background-color: white;
+		padding: 5px;
+	}
+	.text-desc
+	{
+		font-size: 0.9em;
+	}
+	.element-tof
+	{
+		width: 12px;
+		height: 15px;
+		
+
+	}
+
+	.element-tof img
+	{
+		width: 12px;
+		height: 15px;
+		margin: 0;
+		
+
+	}
+	.pti-element
+	{
+		display: inline;
+		float: left;
+		width: 100%;
+		margin: 0;
+		margin-top: 1%;
+	}
+
+
+}
+
+
+
+	.element-tof
+	{
+		width: 40px;
+		height: 40px;
+		float:left;
+		margin: 7px;
+		box-shadow: 1px 1px 1px 1px #555;
+
+	}
+
+
+	.element-tof img
+	{
+		width: 40px;
+		height: 40px;
+	}
+
+	.tof 
+	{
+		display: none;
+	}
+	.active
+	{
+		display: block;
+	}
+
+	.pti-element
+	{
+		display: block;
+		float: left;
+		width: 2.5%;
+		margin: 0;
+		margin-top: 3%;
+	}
+	#payer
+	{
+		margin-top: 2%;
+		width: 100%
+		border-top: 1.5px solid gray;
+		border-bottom: 1.5px solid gray;
+	}
+	#commande-directe
+	{
+		margin-top:25px;
+		padding: 9px;
+	}

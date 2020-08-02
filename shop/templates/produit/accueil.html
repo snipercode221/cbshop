@@ -1,0 +1,1405 @@
+{% block tete %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" >
+{% load static %}
+  <head>
+{% endblock %}
+    <title>{% block title %}cbshop{% endblock %}</title>
+{% block haut %}
+<style type="text/css">
+
+
+          body
+          {
+
+          background-color:#ffffff;
+      
+          }
+          #footer
+          {
+            margin-top: 200px;
+            padding-top: 20px;
+            padding-bottom: 16px;
+          }
+         
+           .navbar-inverse .navbar-nav > li > a {
+            color: white;
+            font-size: 1.2em;
+          }
+
+          .navbar-nav > li > a {
+              padding-top: 20px;
+              padding-bottom: 20px;
+          }
+           .form-web
+          {
+            margin-top: 4%;
+            margin-bottom: 4%;
+            margin-left: 0;
+            margin-right: 0;
+            padding: 0;
+
+
+          }
+
+          #panier a
+          {
+            float: right;
+            margin-top: 1.3%;
+          }
+
+          .form-control {
+            display: inline-block;
+            width: 85%;
+            margin-left: 0;
+            margin-right: 0;
+
+          }
+            #categorie  img.img-long
+          {
+            width: 100%;
+
+          }
+          #categorie  img.img-long:hover
+          {
+            width: 100%;
+          }
+          .title
+          {
+            font-size: 1.5em;
+          }
+
+          #party
+          {
+            padding-right: 2px;
+            padding-left: 2px;
+            padding-top: 2px; 
+            padding-bottom: 2px;
+          }
+
+
+          #party .image-rond
+          {
+            background-color: #EEEEEE;
+            height: 200px;
+
+          }
+          #party img
+          {
+            float: left;
+            width: 50%;
+            height:100%;
+            border-bottom-right-radius: 50%;
+            border-top-right-radius: 50%;
+          }
+          .texte
+          {
+            font-size: 1.2em;
+            padding-top:15%; 
+          }
+             #pub
+          {
+            height: auto;
+            background-color: #F2F2F2;
+            float: right;
+            margin-right: 0;
+            text-align: center;
+
+          }
+          #pub img
+          {
+            margin-top:60px;
+            width: 100%;
+            min-height: 120px;
+            height:auto;
+            max-height: 380px;
+          }
+
+
+
+          .logo
+          {
+            max-height: 50px;
+          }
+          .logo img
+          {
+            max-height: 60px;
+          }
+          form {
+          display: block;
+           margin-top: 0em;
+          }
+           div.web-search 
+          {
+            top: 2%;
+            float: right;
+            width: 40%;
+            display: inline-block;
+          }
+          div.web-search  form
+          {
+            width: 80%;
+            float: right;
+            margin-top:15px;
+          }
+          .panier 
+          {
+            float: right;
+          }
+          div#pub img#vendre-img 
+          {
+            height: 50px;
+            margin: 0;
+            padding: 0;
+            display: block;
+            width: 100%;
+
+          }
+          .pad15 img
+          {
+            max-height:175px; 
+          }
+          .pad15
+          {
+            height: 255px;
+          }
+          .samadeals{
+            font-family:Elephant;
+            font-size: 1.5em;; 
+            color: black;
+            color: green;
+       
+
+          }
+
+ 
+        
+@media only screen and (max-width: 700px) { 
+          
+          div.slider-area
+          {
+            height: 250px;
+            width: 100%;
+          }
+          div.block-slider img {
+              width: 100%;
+              height:200px;
+          }
+          .header-bottom
+          {
+            background : 
+          }
+          .header-bottom {
+            background: #232f3e;
+            padding: 5px 0;
+          }
+          .header-bottom{
+          background: #232f3e;
+          padding: 5px 0;
+          }
+          div.block-slider  div.caption-group {
+              font-size: 5px;
+              float: right;
+              right: 3%;
+
+          }
+          .logo img
+          {
+            height: 60px;
+
+          }
+           .logo
+          {
+            max-height: 60px;
+
+          }
+          .pad15 img
+          {
+            max-height:100px; 
+          }
+          .pad15
+          {
+            height: 195px;
+          }
+          div.web-search 
+          {
+            top: 2%;
+            float: right;
+            width: 50%;
+            display: inline-block;
+          }
+
+
+          }
+
+   </style> 
+
+    <meta http-equiv="Content-Type" content="text/html"; charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="icon" alt="cbshop" type="image/png" href="{% static "image/logoc.png" %}" />
+    <link rel="stylesheet" media="all and (max-width: 890px)" />
+    <link href="{% static "node_modules/bootstrap/dist/css/bootstrap.min.css" %}" rel="stylesheet"/>
+    <link href="{% static "style/style_acceuil.css" %}" rel="stylesheet"/>
+
+
+
+        <!-- Bootstrap -->
+    
+    
+    <!-- Font Awesome -->
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'style/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+    <link rel="stylesheet" href="{% static 'style/responsive.css' %}">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="{% static 'style/menuestyle.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+<script type="text/javascript">
+        $(document).ready(function() {
+            $(".dropdown img.flag").addClass("flagvisibility");
+
+            $(".dropdown dt a").click(function() {
+                $(".dropdown dd ul").toggle();
+            });
+                        
+            $(".dropdown dd ul li a").click(function() {
+                var text = $(this).html();
+                $(".dropdown dt a span").html(text);
+                $(".dropdown dd ul").hide();
+                $("#result").html("Selected value is: " + getSelectedValue("sample"));
+            });
+                        
+            function getSelectedValue(id) {
+                return $("#" + id).find("dt a span.value").html();
+            }
+
+            $(document).bind('click', function(e) {
+                var $clicked = $(e.target);
+                if (! $clicked.parents().hasClass("dropdown"))
+                    $(".dropdown dd ul").hide();
+            });
+
+
+            $("#flagSwitcher").click(function() {
+                $(".dropdown img.flag").toggleClass("flagvisibility");
+            });
+        });
+     </script>
+<!-- start menu -->     
+<link href="{% static 'style/megamenu.css' %}" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="{% static 'js/megamenu.js' %}"></script>
+<script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
+<!-- end menu -->
+<!-- top scrolling -->
+<script type="text/javascript" src="{% static 'js/move-top.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/easing.js' %}"></script>
+   <script type="text/javascript">
+    jQuery(document).ready(function($) {
+      $(".scroll").click(function(event){   
+        event.preventDefault();
+        $('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+      });
+    });
+  </script>
+</head>
+<body>
+<div class="header-top">
+   <div class="wrap"> 
+
+   <!-- 728x90 -->
+    <div class="logo">
+      <a href="{% url "accueil" %}"><img src="{% static 'image/logocbshop.png' %}" alt="cbshop"/></a>
+      </div>
+      
+    
+ <div class="web-search">
+
+  <form action="/shop/recherche/" method="GET">
+          <input id="form-text" type="search" name="q" class="input-search input-sm form-control" placeholder="Rechercher ">
+          
+
+          
+  </form>
+
+     <span id="panier"><a href="{% url "my_cart" %}">  <span class="glyphicon glyphicon-shopping-cart" id="logo" style="color:#232f3e;"></span><span id="rouge-panier">({{nombre_p}})</span> </a></span>
+  </div>
+    
+  
+
+
+
+
+
+
+    </div>
+    
+    <div class="clear"></div>
+
+  </div>
+   </div>
+   <div class="header-bottom">
+    <div class="wrap">
+      <!-- start header menu -->
+
+
+
+    <ul class="megamenu skyblue">
+        <li><a class="color1" href="{% url "accueil" %}">accueil</a></li>
+      <li class="grid"><a class="color2" href="#">Electronique</a>
+        <div class="megapanel">
+          <div class="row">
+            <div class="col1">
+              
+              <div class="h_nav">
+                <h4 class="top">Boutiques</h4>
+                <ul>
+                  {% for produit in boutique1 %}
+                  <li><a href="shop/boutique/{{produit.id}} ">{{produit.nom}}</a></li>
+                {% endfor %}
+                </ul> 
+              </div>
+              <div class="h_nav">
+                <h4>shop à multi-catégorie</h4>
+                <ul>
+                  {% for produit in boutique_m %}
+                  <li><a href="shop/boutique/{{produit.id}} ">{{produit.nom}}</a></li>
+                {% endfor %}
+                  
+                </ul> 
+                
+              </div>
+            </div>
+            <div class="col1">
+              <div class="h_nav">
+                <h4>Categories</h4>
+                <ul>
+                  {% for produit in categorie1 %}
+                  <li><a href="{% url "categorie" produit.id %}">{{produit.nom}}</a></li>
+                {% endfor %}
+                  
+                </ul> 
+                
+              </div>              
+            </div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+
+            <img src="{% static "image/maxresdefault-300x224.jpg" %}" alt=""/>
+          </div>
+        </div>
+        </li>
+        
+
+        <li class="grid"><a class="color4" href="#">Femme</a>
+        <div class="megapanel">
+          <div class="row">
+            <div class="col1">
+              
+              <div class="h_nav">
+                <h4 class="top">Boutiques</h4>
+                <ul>
+                  {% for produit in boutique1 %}
+                  <li><a href="shop/boutique/{{produit.id}} ">{{produit.nom}}</a></li>
+                {% endfor %}
+                </ul> 
+              </div>
+              <div class="h_nav">
+                <h4>shop à multi-catégorie</h4>
+                <ul>
+                  {% for produit in boutique_m %}
+                  <li><a href="shop/boutique/{{produit.id}} ">{{produit.nom}}</a></li>
+                {% endfor %}
+                  
+                </ul> 
+                
+              </div>
+            </div>
+            <div class="col1">
+              <div class="h_nav">
+                <h4>Categories</h4>
+                <ul>
+                  {% for produit in categorie1 %}
+                  <li><a href="{% url "categorie" produit.id %}">{{produit.nom}}</a></li>
+                {% endfor %}
+                  
+                </ul> 
+                
+              </div>              
+            </div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+
+            <img src="{% static "image/Ron-Ron-100-Black-Suede-Women-Shoes-Christian.jpg" %}" alt=""/>
+          </div>
+        </div>
+        </li>
+           <li class="active grid"><a class="color7" href="#">Service de répartion</a>
+        <div class="megapanel">
+          <div class="row">
+            <div class="col1">
+              <div class="h_nav">
+                <h4>shop</h4>
+                <ul>
+                  <li><a href="shop.html">new arrivals</a></li>
+                  <li><a href="shop.html">men</a></li>
+                  <li><a href="shop.html">women</a></li>
+                  <li><a href="shop.html">accessories</a></li>
+                  <li><a href="shop.html">kids</a></li>
+                  <li><a href="shop.html">brands</a></li>
+                </ul> 
+              </div>              
+            </div>
+            <div class="col1">
+              <div class="h_nav">
+                <h4>help</h4>
+                <ul>
+                  <li><a href="shop.html">trends</a></li>
+                  <li><a href="shop.html">sale</a></li>
+                  <li><a href="shop.html">style videos</a></li>
+                  <li><a href="shop.html">accessories</a></li>
+                  <li><a href="shop.html">kids</a></li>
+                  <li><a href="shop.html">style videos</a></li>
+                </ul> 
+              </div>              
+            </div>
+            <div class="col1">
+              <div class="h_nav">
+                <h4>my company</h4>
+                <ul>
+                  <li><a href="shop.html">trends</a></li>
+                  <li><a href="shop.html">sale</a></li>
+                  <li><a href="shop.html">style videos</a></li>
+                  <li><a href="shop.html">accessories</a></li>
+                  <li><a href="shop.html">kids</a></li>
+                  <li><a href="shop.html">style videos</a></li>
+                </ul> 
+              </div>                        
+            </div>
+            <div class="col1">
+              <div class="h_nav">
+                <h4>account</h4>
+                <ul>
+                  <li><a href="shop.html">login</a></li>
+                  <li><a href="shop.html">create an account</a></li>
+                  <li><a href="shop.html">create wishlist</a></li>
+                  <li><a href="shop.html">my shopping bag</a></li>
+                  <li><a href="shop.html">brands</a></li>
+                  <li><a href="shop.html">create wishlist</a></li>
+                </ul> 
+              </div>            
+            </div>
+            <div class="col1">
+              <div class="h_nav">
+                <h4>popular</h4>
+                <ul>
+                  <li><a href="shop.html">new arrivals</a></li>
+                  <li><a href="shop.html">men</a></li>
+                  <li><a href="shop.html">women</a></li>
+                  <li><a href="shop.html">accessories</a></li>
+                  <li><a href="shop.html">kids</a></li>
+                  <li><a href="shop.html">style videos</a></li>
+                </ul> 
+              </div>
+            </div>
+            <div class="col1">
+             <div class="h_nav">
+               <img src="images/nav_img1.jpg" alt=""/>
+             </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col2"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+          </div>
+          </div>
+          </li>       
+        <li><a class="color5" href="#">Alimentation</a>
+        <div class="megapanel">
+          <div class="row">
+            <div class="col1">
+              
+              <div class="h_nav">
+                <h4 class="top">Boutiques</h4>
+                <ul>
+                  {% for produit in boutique1 %}
+                  <li><a href="shop/boutique/{{produit.id}} ">{{produit.nom}}</a></li>
+                {% endfor %}
+                </ul> 
+              </div>
+              <div class="h_nav">
+                <h4>shop à multi-catégorie</h4>
+                <ul>
+                  {% for produit in boutique_m %}
+                  <li><a href="shop/boutique/{{produit.id}} ">{{produit.nom}}</a></li>
+                {% endfor %}
+                  
+                </ul> 
+                
+              </div>
+            </div>
+            <div class="col1">
+              <div class="h_nav">
+                <h4>Categories</h4>
+                <ul>
+                  {% for produit in categorie1 %}
+                  <li><a href="{% url "categorie" produit.id %}">{{produit.nom}}</a></li>
+                {% endfor %}
+                  
+                </ul> 
+                
+              </div>              
+            </div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+
+            <img src="{% static "image/Ron-Ron-100-Black-Suede-Women-Shoes-Christian.jpg" %}" alt=""/>
+          </div>
+        </div>
+
+      </li>
+        <li><a class="color6" href="#">Boutique</a>
+        <div class="megapanel">
+          <div class="row">
+            <div class="col1">
+              <div class="h_nav">
+                <h4>shop</h4>
+                <ul>
+                  <li><a href="shop.html">new arrivals</a></li>
+                  <li><a href="shop.html">men</a></li>
+                  <li><a href="shop.html">women</a></li>
+                  <li><a href="shop.html">accessories</a></li>
+                  <li><a href="shop.html">kids</a></li>
+                  <li><a href="shop.html">brands</a></li>
+                </ul> 
+              </div>  
+              <div class="h_nav">
+                <h4 class="top">my company</h4>
+                <ul>
+                  <li><a href="shop.html">trends</a></li>
+                  <li><a href="shop.html">sale</a></li>
+                  <li><a href="shop.html">style videos</a></li>
+                  <li><a href="shop.html">accessories</a></li>
+                  <li><a href="shop.html">kids</a></li>
+                  <li><a href="shop.html">style videos</a></li>
+                </ul> 
+              </div>                        
+            </div>
+            <div class="col1">
+              <div class="h_nav">
+                <h4>man</h4>
+                <ul>
+                  <li><a href="shop.html">new arrivals</a></li>
+                  <li><a href="shop.html">men</a></li>
+                  <li><a href="shop.html">women</a></li>
+                  <li><a href="shop.html">accessories</a></li>
+                  <li><a href="shop.html">kids</a></li>
+                  <li><a href="shop.html">style videos</a></li>
+                </ul> 
+              </div>            
+            </div>
+            <div class="col1">
+              <div class="h_nav">
+                <h4>help</h4>
+                <ul>
+                  <li><a href="shop.html">trends</a></li>
+                  <li><a href="shop.html">sale</a></li>
+                  <li><a href="shop.html">style videos</a></li>
+                  <li><a href="shop.html">accessories</a></li>
+                  <li><a href="shop.html">kids</a></li>
+                  <li><a href="shop.html">style videos</a></li>
+                </ul> 
+              </div>              
+            </div>
+            <div class="col1">
+              <div class="h_nav">
+                <h4>account</h4>
+                <ul>
+                  <li><a href="shop.html">login</a></li>
+                  <li><a href="shop.html">create an account</a></li>
+                  <li><a href="shop.html">create wishlist</a></li>
+                  <li><a href="shop.html">my shopping bag</a></li>
+                  <li><a href="shop.html">brands</a></li>
+                  <li><a href="shop.html">create wishlist</a></li>
+                </ul> 
+              </div>            
+            </div>
+            <div class="col1">
+              <div class="h_nav">
+                <h4>my company</h4>
+                <ul>
+                  <li><a href="shop.html">trends</a></li>
+                  <li><a href="shop.html">sale</a></li>
+                  <li><a href="shop.html">style videos</a></li>
+                  <li><a href="shop.html">accessories</a></li>
+                  <li><a href="shop.html">kids</a></li>
+                  <li><a href="shop.html">style videos</a></li>
+                </ul> 
+              </div>
+            </div>
+            <div class="col1">
+              <div class="h_nav">
+                <h4>popular</h4>
+                <ul>
+                  <li><a href="shop.html">new arrivals</a></li>
+                  <li><a href="shop.html">men</a></li>
+                  <li><a href="shop.html">women</a></li>
+                  <li><a href="shop.html">accessories</a></li>
+                  <li><a href="shop.html">kids</a></li>
+                  <li><a href="shop.html">style videos</a></li>
+                </ul> 
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col2"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+          </div>
+        </div>
+        </li>
+               <li><a class="color8" href="#">Meuble</a>
+        <div class="megapanel">
+          <div class="row">
+            <div class="col1">
+              <div class="h_nav">
+                <h4>style zone</h4>
+                <ul>
+                  <li><a href="shop.html">men</a></li>
+                  <li><a href="shop.html">women</a></li>
+                  <li><a href="shop.html">accessories</a></li>
+                  <li><a href="shop.html">kids</a></li>
+                  <li><a href="shop.html">brands</a></li>
+                </ul> 
+              </div>              
+            </div>
+            <div class="col1">
+              <div class="h_nav">
+                <h4>popular</h4>
+                <ul>
+                  <li><a href="shop.html">new arrivals</a></li>
+                  <li><a href="shop.html">men</a></li>
+                  <li><a href="shop.html">kids</a></li>
+                  <li><a href="shop.html">accessories</a></li>
+                  <li><a href="shop.html">login</a></li>
+                </ul> 
+              </div>
+              <div class="h_nav">
+                <h4 class="top">man</h4>
+                <ul>
+                  <li><a href="shop.html">new arrivals</a></li>
+                  <li><a href="shop.html">accessories</a></li>
+                  <li><a href="shop.html">kids</a></li>
+                  <li><a href="shop.html">style videos</a></li>
+                </ul> 
+              </div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+          </div>
+        </div>
+        </li>
+        <li><a class="color9" href="#">Compte</a>
+        <div class="megapanel">
+          <div class="row">
+            <div class="col1">
+              <div class="h_nav">
+                <h4>shop</h4>
+                <ul>
+                  <li><a href="shop.html">new arrivals</a></li>
+                  <li><a href="shop.html">men</a></li>
+                  <li><a href="shop.html">women</a></li>
+                  <li><a href="shop.html">accessories</a></li>
+                  <li><a href="shop.html">kids</a></li>
+                  <li><a href="shop.html">brands</a></li>
+                </ul> 
+              </div>              
+            </div>
+            <div class="col1">
+              <div class="h_nav">
+                <h4>help</h4>
+                <ul>
+                  <li><a href="shop.html">trends</a></li>
+                  <li><a href="shop.html">sale</a></li>
+                  <li><a href="shop.html">style videos</a></li>
+                  <li><a href="shop.html">accessories</a></li>
+                  <li><a href="shop.html">kids</a></li>
+                  <li><a href="shop.html">style videos</a></li>
+                </ul> 
+              </div>              
+            </div>
+            <div class="col1">
+              <div class="h_nav">
+                <h4>my company</h4>
+                <ul>
+                  <li><a href="shop.html">trends</a></li>
+                  <li><a href="shop.html">sale</a></li>
+                  <li><a href="shop.html">style videos</a></li>
+                  <li><a href="shop.html">accessories</a></li>
+                  <li><a href="shop.html">kids</a></li>
+                  <li><a href="shop.html">style videos</a></li>
+                </ul> 
+              </div>                        
+            </div>
+            <div class="col1">
+              <div class="h_nav">
+                <h4>account</h4>
+                <ul>
+                  <li><a href="shop.html">login</a></li>
+                  <li><a href="shop.html">create an account</a></li>
+                  <li><a href="shop.html">create wishlist</a></li>
+                  <li><a href="shop.html">my shopping bag</a></li>
+                  <li><a href="shop.html">brands</a></li>
+                  <li><a href="shop.html">create wishlist</a></li>
+                </ul> 
+              </div>            
+            </div>
+            <div class="col1">
+              <div class="h_nav">
+                <h4>my company</h4>
+                <ul>
+                  <li><a href="shop.html">trends</a></li>
+                  <li><a href="shop.html">sale</a></li>
+                  <li><a href="shop.html">style videos</a></li>
+                  <li><a href="shop.html">accessories</a></li>
+                  <li><a href="shop.html">kids</a></li>
+                  <li><a href="shop.html">style videos</a></li>
+                </ul> 
+              </div>
+            </div>
+            <div class="col1">
+              <div class="h_nav">
+                <h4>popular</h4>
+                <ul>
+                  <li><a href="shop.html">new arrivals</a></li>
+                  <li><a href="shop.html">men</a></li>
+                  <li><a href="shop.html">women</a></li>
+                  <li><a href="shop.html">accessories</a></li>
+                  <li><a href="shop.html">kids</a></li>
+                  <li><a href="shop.html">style videos</a></li>
+                </ul> 
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col2"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+          </div>
+            </div>
+        </li>
+        <li><a class="color11" href="#">Aide </a></li>
+        {}
+        <li><a class="color12" href="#">Basketball</a></li>
+       </ul>
+       <div class="clear"></div>
+      </div>
+       </div>
+       <script type="text/javascript">
+      $(document).ready(function() {
+      
+        var defaults = {
+            containerID: 'toTop', // fading element id
+          containerHoverID: 'toTopHover', // fading element hover id
+          scrollSpeed: 1200,
+          easingType: 'linear' 
+        };
+        
+        
+        $().UItoTop({ easingType: 'easeOutQuart' });
+        
+      });
+    </script>
+
+  
+
+ <script type="text/javascript">
+      $(document).ready(function() {
+      
+        var defaults = {
+            containerID: 'toTop', // fading element id
+          containerHoverID: 'toTopHover', // fading element hover id
+          scrollSpeed: 1200,
+          easingType: 'linear' 
+        };
+        
+        
+        $().UItoTop({ easingType: 'easeOutQuart' });
+        
+      });
+    </script>
+
+
+
+{% endblock %}
+{% block page %}
+   
+ 
+    <div class="slider-area">
+          <!-- Slider -->
+      <div class="block-slider block-slider4">
+        <ul class="" id="bxslider-home4">
+          <li>
+            <img src="{% static 'image/h4-slide.png' %}" alt="Slide">
+            <div class="caption-group">
+              <h2 class="caption title">
+                iPhone <span class="primary">6 <strong>Plus</strong></span>
+              </h2>
+              <h4 class="caption subtitle">Dual SIM</h4>
+              <a class="caption button-radius" href="#"><span class="icon"></span>Shop now</a>
+            </div>
+          </li>
+          <li><img src="{% static 'image/h4-slide2.png' %}" alt="Slide">
+            <div class="caption-group">
+              <h2 class="caption title">
+                by one<span class="primary">50% <strong>off</strong></span>
+              </h2>
+              <h4 class="caption subtitle">school supplies</h4>
+              <a class="caption button-radius" href="#"><span class="icon"></span>Shop now</a>
+            </div>
+          </li>
+          <li><img src="{% static 'image/h4-slide3.png' %}" alt="Slide">
+            <div class="caption-group">
+              <h2 class="caption title">
+                Apple <span class="primary">Store <strong>Ipod</strong></span>
+              </h2>
+              <h4 class="caption subtitle">Select Item</h4>
+              <a class="caption button-radius" href="#"><span class="icon"></span>Shop now</a>
+            </div>
+          </li>
+          <li><img src="{% static 'image/h4-slide4.png' %}" alt="Slide">
+            <div class="caption-group">
+              <h2 class="caption title">
+                Apple <span class="primary">Store <strong>Ipod</strong></span>
+              </h2>
+              <h4 class="caption subtitle">& Phone</h4>
+              <a class="caption button-radius" href="#"><span class="icon"></span>Shop now</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!-- ./Slider -->
+    </div> <!-- End slider area -->
+
+
+
+
+
+
+
+<div class="web" >
+
+
+<!--  Contenue des publicité sur le site -->
+<div id="pub" class="col-lg-3 col-sm-3 col-xs-12" >
+  <div class="col-lg-12">
+    <a href="/shop/vente/"> <img id="vendre-img" alt="cbshop publicite" src="{% static 'image/commerce-conseils-aux-PME-bien-vendre-ligne-F.jpg' %}"> </a>
+    <span class="text">Vendre sur Internet </span>
+    
+  </div>
+  
+ 
+
+</div>
+<div class="col-lg-9 ">
+  <div class="container-fluid">
+    
+    
+   
+    <div id="party" class="col-lg-6 col-sm-5 col-lg-12 party">
+      <div class="image-rond cache-menue">
+        <img src="{% static 'image/c700x420.jpg' %}" class="img-left">
+        <div class="texte">
+        Des basses percutantes et des aigus cristallins qui vous séduiront
+        </div>
+      </div>
+      
+      
+    </div>
+     <div  id="party" class="col-lg-6 col-sm-5 col-lg-12 party">
+      <div class="image-rond cache-menue">
+        <img src="{% static 'image/electromenager-pub.jpg' %}" class="img-left">
+        <div class="texte">
+        Vous accompagner au quotidien avec du matériel pour toute les surfaces
+        </div>
+      </div>
+
+    
+      
+    </div>
+  </div>
+
+
+
+
+</div>
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<div class="container">
+  <div class="row">
+    <div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel"  data-interval="1000"><span class="title">Produits en Promotion : meilleurs prix - cbshop</span><br>
+            <div class="MultiCarousel-inner">
+              <div class="item">
+                    <div class="pad15">
+                      <a href="{% url 'produit-promo' %}">
+                        <p class="lead" style="color: blue ; font-size: 1.2em;">Promotions et Ventes Flash. Les meilleures offres de cbshop.sn </p>
+                        <p>₹ faites vite! </p>
+                        <p>₹ plus de 6000</p>
+                        <p>Jusqu'a 50% </p>
+                      </a>
+                    </div>
+                </div>
+              {% for promo in promos %}
+                <div class="item">
+                    <div class="pad15">
+                      <a href="{% url 'detail-prod' promo.produit.id %}">
+                        <img src="{{ promo.produit.photo_img1.url }}" alt="{{promo.produit.nom}}"/>
+                        {% if promo.produit.prix_normal != 0 %} <p><s style="color: red">{{promo.produit.prix_normal}}</s>{% endif %}<br>
+                        <span style="color: blue"> {{promo.nouveau_prix}} Francs</span>
+                        <br>Termine le {{promo.date_fin.day}}/{{promo.date_fin.month}}/{{promo.date_fin.year}}</p>
+                      </a>
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="item">
+                    <div class="pad15">
+                      <a href="{% url 'produit-promo' %}">
+                        <p class="lead" style="color: blue ; font-size: 1.2em;">Promotions et Ventes Flash. Les meilleures offres de cbshop.sn </p>
+                        <p>₹ faites vite! </p>
+                        <p>₹ plus de 6000</p>
+                        <p>Jusqu'a 50% </p>
+                      </a>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary leftLst"><</button>
+            <button class="btn btn-primary rightLst">></button>
+        </div>
+  </div>
+  
+</div>
+<div id="pub" class="col-lg-3 col-sm-3 col-xs-12" >
+  
+  
+    <div class="col-lg-12">
+    <a href="/shop/categorie_mere/1/"><img alt="cbshop publicite" src="{% static 'image/samsung-galaxy-note-8.png' %}"></a>
+    <span class="text"> La grande classe </span>
+
+  </div>
+
+
+
+  <div class="col-lg-12">
+    <a href="/shop/reparation/"><img alt="cbshop publicite" src="{% static 'image/assistance.png' %}"></a>
+    <span class="text"> Une assistance 24h/24</span>
+</div>
+  
+ <div class="col-lg-12">
+    <a href="/shop/categorie_mere/6/"><img alt="cbshop publicite" src="{% static 'image/femme.png' %}"></a>
+    <span class="text"> Du charme et de l'élégance </span>
+
+
+
+
+  </div>
+
+ 
+    
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="col-lg-8" style="background-color:#EEEEEE; margin-left:6.5%;  height:90px; text-align: center;" ><img src=""><span class="col-lg-7 samadeals">Envie  de vendre votre Matos ou même d'acheter des produits d'occasion</span><span><a href=""> <img style="height:150%; float: left;" src="{% static 'image/samadeals.png' %}"></a><span class="samadeals"><a href=""> KAYE GNIOU TÉÉK DEALS </a> </span> </span>
+</div>
+
+<div id="categorie" class="col-lg-8 ">
+
+
+  <div class="col-lg-12">
+    <span class="title">Appareil Electronique</span><br>
+    
+     <a href="/shop/categorie_mere/1/">
+     <img alt="cbshop Appareil Electronique" src="{% static 'image/Responsive-design.png' %}">
+     <img alt="cbshop Appareil Electronique" src="{% static 'image/c700x420.jpg' %}">
+     <img alt="cbshop Appareil Electronique" src="{% static 'image/smartphone.png' %}">
+    </a>
+    
+  </div>
+     <div class="col-lg-12">
+    <span class="title">Appareil Electromenager</span><br>
+    <a href="/shop/categorie_mere/2/">
+     <img alt="cbshop Appareil Electromenager" src="{% static 'image/electromenager-en-ligne.jpg' %}">
+     <img alt="cbshop Appareil Electromenager" src="{% static 'image/electromenagers.jpg' %}">
+     <img alt="cbshop Appareil Electromenager" src="{% static 'image/appliances.jpg' %}">
+    </a>
+
+  </div>
+
+  <div class="col-lg-12">
+    <span class="title">Meuble</span><br>
+    <a href="/shop/categorie_mere/3/" >
+    <img  class="img-long" alt="cbshop  Meuble" src="{% static 'image/financement-meuble.jpg' %}">
+     
+     
+    </a>
+  </div>
+
+
+
+  <div class="col-lg-12">
+    <span class="title">Mode Homme</span><br>
+    <a href="/shop/categorie_mere/4/">
+     <img alt="cbshop Mode Homme" src="/static/image/chaussure6_2.jpg">
+     <img alt="cbshop Mode Homme" src="/static/image/pantalon-militaire.jpg">
+     <img alt="cbshop Mode Homme" src="/static/image/chemise5_1.jpg">
+    </a>
+  </div>
+   
+ 
+  <div class="col-lg-12">
+    <span class="title">Alimentation</span><br>
+    <a href="/shop/categorie_mere/5/">
+     <img alt="cbshop Alimentation" src="/static/image/alimentation.gif">
+     <img alt="cbshop Alimentation" src="/static/image/bol-de-riz.jpg">
+     <img alt="cbshop Alimentation" src="/static/image/Lait-en-poudre.jpg">
+    </a>
+  </div>
+   
+
+
+
+
+    
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+<style type="text/css">
+
+
+
+.MultiCarousel { float: left; overflow: hidden; padding: 15px; width: 100%; position:relative; }
+.MultiCarousel .MultiCarousel-inner { transition: 1s ease all; float: left; }
+.MultiCarousel .MultiCarousel-inner .item { float: left;}
+.MultiCarousel .MultiCarousel-inner .item > div { text-align: center; padding:10px; margin:10px; background:#f1f1f1; color:#666;}
+.MultiCarousel .leftLst, .MultiCarousel .rightLst { position:absolute; border-radius:50%;top:calc(50% - 20px); }
+.MultiCarousel .leftLst { left:0; }
+.MultiCarousel .rightLst { right:0; }
+.MultiCarousel .leftLst.over, .MultiCarousel .rightLst.over { pointer-events: none; background:#ccc; }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+$(document).ready(function () {
+    var itemsMainDiv = ('.MultiCarousel');
+    var itemsDiv = ('.MultiCarousel-inner');
+    var itemWidth = "";
+
+    $('.leftLst, .rightLst').click(function () {
+        var condition = $(this).hasClass("leftLst");
+        if (condition)
+            click(0, this);
+        else
+            click(1, this)
+    });
+
+    ResCarouselSize();
+
+
+
+
+    $(window).resize(function () {
+        ResCarouselSize();
+    });
+
+    //this function define the size of the items
+    function ResCarouselSize() {
+        var incno = 0;
+        var dataItems = ("data-items");
+        var itemClass = ('.item');
+        var id = 0;
+        var btnParentSb = '';
+        var itemsSplit = '';
+        var sampwidth = $(itemsMainDiv).width();
+        var bodyWidth = $('body').width();
+        $(itemsDiv).each(function () {
+            id = id + 1;
+            var itemNumbers = $(this).find(itemClass).length;
+            btnParentSb = $(this).parent().attr(dataItems);
+            itemsSplit = btnParentSb.split(',');
+            $(this).parent().attr("id", "MultiCarousel" + id);
+
+
+            if (bodyWidth >= 1200) {
+                incno = itemsSplit[3];
+                itemWidth = sampwidth / incno;
+            }
+            else if (bodyWidth >= 992) {
+                incno = itemsSplit[2];
+                itemWidth = sampwidth / incno;
+            }
+            else if (bodyWidth >= 768) {
+                incno = itemsSplit[1];
+                itemWidth = sampwidth / incno;
+            }
+            else {
+                incno = itemsSplit[0];
+                itemWidth = sampwidth / incno;
+            }
+            $(this).css({ 'transform': 'translateX(0px)', 'width': itemWidth * itemNumbers });
+            $(this).find(itemClass).each(function () {
+                $(this).outerWidth(itemWidth);
+            });
+
+            $(".leftLst").addClass("over");
+            $(".rightLst").removeClass("over");
+
+        });
+    }
+
+
+    //this function used to move the items
+    function ResCarousel(e, el, s) {
+        var leftBtn = ('.leftLst');
+        var rightBtn = ('.rightLst');
+        var translateXval = '';
+        var divStyle = $(el + ' ' + itemsDiv).css('transform');
+        var values = divStyle.match(/-?[\d\.]+/g);
+        var xds = Math.abs(values[4]);
+        if (e == 0) {
+            translateXval = parseInt(xds) - parseInt(itemWidth * s);
+            $(el + ' ' + rightBtn).removeClass("over");
+
+            if (translateXval <= itemWidth / 2) {
+                translateXval = 0;
+                $(el + ' ' + leftBtn).addClass("over");
+            }
+        }
+        else if (e == 1) {
+            var itemsCondition = $(el).find(itemsDiv).width() - $(el).width();
+            translateXval = parseInt(xds) + parseInt(itemWidth * s);
+            $(el + ' ' + leftBtn).removeClass("over");
+
+            if (translateXval >= itemsCondition - itemWidth / 2) {
+                translateXval = itemsCondition;
+                $(el + ' ' + rightBtn).addClass("over");
+            }
+        }
+        $(el + ' ' + itemsDiv).css('transform', 'translateX(' + -translateXval + 'px)');
+    }
+
+    //It is used to get some elements from btn
+    function click(ell, ee) {
+        var Parent = "#" + $(ee).parent().attr("id");
+        var slide = $(Parent).attr("data-slide");
+        ResCarousel(ell, Parent, slide);
+    }
+
+});
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+{% block footer %}
+
+        <footer id="footer" class="col-lg-12 col-xs-12">
+       
+            <div class="col-lg-4 col-xs-12">
+                <div id="mes_photos">
+                    <h1>Nos réseaux sociaux</h1>
+                    <p><a href=""><img src="/static/image/iconefacebook1.png" alt="facebook" /></a><a href=""><img src="/static/image/iconewhatsapp.png" alt="WhatsApp" /></a><a href=""><img src="/static/image/iconegmail.png"  alt="Gmail" /></a><a href=""><img src="/static/image/twitter.png" alt="Twiter" /></a></p>
+                </div>
+
+            </div>
+            <div class="col-lg-4 col-xs-12">
+                <div id="mes_amis">
+                    <h1>Partenaires</h1>
+                    <div id="listes_amis">
+                        <ul>
+                            <li><a href="#">Autre</a></li>
+                            <li><a href="#">Orange Money</a></li>
+                            <li><a href="#">La Poste </a></li>
+                            <li><a href="#">Des banques </a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">Autre...</a></li>
+                            <li><a href="#">Autre...</a></li>
+                            <li><a href="#">Autre...</a></li>
+                            <li><a href="#">Autre...</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+             <div class="col-lg-4 col-xs-12">
+                <div id="contact">
+                    <h1>Nous joindre </h1>
+                    <div id="list_contact">
+                        <ul>
+                          
+                            <li>cbshop.sn@gmail.com</li>
+          
+           <li>775837861</li>
+           <li>775230333</li>
+
+
+                            <li> Ou utiliser <a href="">busnessdembis85@gmail.com</a> </li>
+                        </ul>
+   
+           </footer>
+
+
+  </div>
+
+
+<!-- Latest jQuery form server -->
+    
+    
+    <!-- jQuery sticky menu -->
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/jquery.sticky.js' %}"></script>
+    
+    <!-- jQuery easing -->
+    <script src="{% static 'js/jquery.easing.1.3.min.js' %}"></script>
+    
+    <!-- Main Script -->
+    <script src="{% static 'js/main.js' %}"></script>
+    
+    <!-- Slider -->
+    <script type="text/javascript" src=" {% static "js/bxslider.min.js" %}"></script>
+  <script type="text/javascript" src="{% static "js/script.slider.js" %}"></script>
+{% endblock %}
+
+  </body>
+</html>
+
+
+
+
+
+
+<!--         #####Contenue de la page d'acceuil 
+
+  # A droite les pubs 
+
+  # A gauche les catégories et méres 
+
+-Pour chaque ligne ou contenue horizontal une catégorie 
+  *Dans chaque catégorie méres on présentes des images faisant référence à celle ci
+  *Les images accompagner de texte explicites constituron des lien vers ces derniér
+
+
+#En bas avant le footer 
+
+
+
+

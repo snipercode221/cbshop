@@ -1,0 +1,163 @@
+
+{% extends "compte/compt-vendeur.html"%}
+{% block title %} detail de la commande {% endblock %}
+
+
+{% load static %}
+
+
+
+{% block commande %}
+
+Commande :<h3> {{commande.panier.produit.nom}}  </h3>
+<style type="text/css">
+#commande 
+{
+	height: 500px;
+}
+td
+{	margin-top: 2%;
+	font-size: 1.4em;
+}
+.prix
+{
+	color: #CC66FF;
+}
+#panier-prod
+{
+	margin-bottom: 0%;
+	height: 400px;
+
+}
+td img
+{
+	width: 20%;
+}
+#panier
+{
+	top: 0;
+	float: left;
+	margin-left: 8%;
+	margin-bottom: 3%;
+}
+
+table
+{
+	margin: 0;
+	top: 5%;
+}
+td
+{
+	padding:1%;
+	margin-left:  12%;
+	margin-right:  7%;
+}
+tr
+{
+	border-bottom:  2.1px solid gray;
+}
+h3
+{
+	font-size: 2.8em;
+	color: #232f3e;
+	margin: 0;
+}
+@media all and (max-width: 890px){
+#panier
+{
+	margin: 0;
+
+}
+td
+{
+	font-size: 0.9em;
+}
+h3
+{
+	font-size: 1.8em;
+	color: #232f3e;
+}
+
+
+#panier-prod
+{
+	margin: 0%;
+	height: 550px;
+
+}
+td img
+{
+	height: 150px;
+}
+
+}
+.rouge
+{
+	color: red;
+}
+
+h4 
+{
+	margin: 3%;
+}
+
+
+</style>
+
+<div id="commande" class="col-lg-9 col-sm-10 col-xs-12">
+
+<div class="col-lg-12 col-sm-12 col-xs-12" id="panier">
+	<table>
+	<thead>
+		<tr>
+			<td>Produits </td>
+			<td> Prix</td>
+			<td>Quantité </td>
+			
+		
+			
+		</tr>
+
+	</thead>
+	<tbody>
+
+<tr>
+<td><img src="{{ commande.panier.produit.photo_img1.url }}"/><br>
+Nom du produit : {{commande.panier.produit.nom}} 
+<br>
+Nom du client  :{{commande.panier.client.nom}}
+<br>
+Numéro de Téléphone du client : <span class="rouge">{{ commande.numero_client }}</span>
+<br>
+Lieu de livraison : <span class="rouge">{{commande.lieu_de_livraison }}</span> 
+<br>
+Date de la commande  : {{commande.date}}
+
+
+</td>
+
+<td><span class="prix">
+{{commande.panier.produit.prix}} Francs CFA </span>
+</td>
+<td>
+{{commande.panier.quantite}}
+</td>
+</tr>
+
+
+
+</tbody>
+</table>
+
+<h4>Pour une somme de: <span class="rouge"> {{total}} Francs CFA</span></h4>
+{% if commande.Livré != True %}
+<a href="{% url "compte_vendeur" %}"><button>En attente </button></a>
+<a href="{% url "livrer" commande.id %}"><button>Déja Livré </button></a>{% endif %}
+
+</div>
+</div>
+</div>
+</div>
+
+{% endblock %}
+

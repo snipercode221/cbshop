@@ -1,0 +1,84 @@
+td
+{
+	font-size: 1.2em;
+}
+.prix
+{
+	color: #CC66FF;
+}
+#panier-prod
+{
+	margin-bottom: 0%;
+	height: 250px;
+
+}
+td img
+{
+	width: 17%;
+	height: 47%;
+}
+#panier
+{
+	top: 0;
+	float: left;
+	margin-left: 8%;
+}
+#confirmer-achat
+{
+	float:right;
+	margin-top:15%; 
+	padding: 0;
+	background-color: #232f3e;
+	height: 180px;
+	color: white;
+	text-align: center;
+}
+#confirmer-achat a button
+{
+	margin-top: 4%;
+}
+table
+{
+	margin: 0;
+	top: 5%;
+}
+td
+{
+	padding:1%;
+	margin-left:  12%;
+	margin-right:  7%;
+}
+tr
+{
+	border-bottom:  2.1px solid gray;
+}
+h3
+{
+	font-size: 2.8em;
+	color: #232f3e;
+	margin: 0;
+}
+@media all and (max-width: 890px){
+#panier
+{
+	margin: 0;
+}
+td
+{
+	font-size: 0.9em;
+}
+h3
+{
+	font-size: 1.8em;
+	color: #232f3e;
+}
+
+
+
+td img
+{
+	width: 38%;
+	height: 10%;
+}
+
+}

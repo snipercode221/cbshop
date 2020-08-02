@@ -1,0 +1,49 @@
+{% extends "compte/compt-vendeur.html"%}
+{% block title %} Ajout Marque {% endblock %}
+
+
+{% load static %}
+
+
+
+{% block commande %}
+<link href="{% static "style/style_ajout.css" %}" rel="stylesheet"/>
+{% if envoi %}
+
+<div id="reussit">
+
+
+Marque enregistrer avec succée 
+</div>
+<style type="text/css">
+	#reussit
+	{
+		padding: 2%;
+		background-color:#337ab7;
+		width: 100%;
+		color: white;
+		top: 0;
+		
+	}
+	
+</style>
+
+</div>
+{% else %}
+<link href="{% static "style/style_ajout.css" %}" rel="stylesheet"/>
+
+<div class="col-lg-6 col-sm-6 col-xs-11">
+<form action="." method="post">
+<h3>Ajouter un nouveau marque </h3>
+<h5>Choisissez votre boutique </h5>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <a href="{% url "produit" 3 %}"><button>Annuler</button></a>
+    <input type="submit" value="Enregistrer" />
+</form>
+</div>
+{% endif %}
+
+
+</div>
+{% endblock %}
